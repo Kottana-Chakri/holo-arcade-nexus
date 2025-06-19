@@ -1,59 +1,12 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+/* Futuristic Gaming Marketplace Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
@@ -63,16 +16,16 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 200 100% 50%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 260 100% 70%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 20 100% 60%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -80,24 +33,178 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
+    --ring: 200 100% 50%;
 
-@layer base {
-  * {
-    @apply border-border;
+    --radius: 0.75rem;
+
+    /* Cyberpunk color palette */
+    --neon-blue: 200 100% 50%;
+    --neon-purple: 260 100% 70%;
+    --neon-orange: 20 100% 60%;
+    --electric-blue: 210 100% 56%;
+    --cyber-purple: 271 91% 65%;
+    --plasma-orange: 25 95% 53%;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-black text-foreground;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Cyberpunk glow effects */
+  .neon-glow {
+    box-shadow: 0 0 5px hsl(var(--neon-blue)), 0 0 10px hsl(var(--neon-blue)), 0 0 15px hsl(var(--neon-blue));
+  }
+
+  .neon-glow-purple {
+    box-shadow: 0 0 5px hsl(var(--neon-purple)), 0 0 10px hsl(var(--neon-purple)), 0 0 15px hsl(var(--neon-purple));
+  }
+
+  .neon-glow-orange {
+    box-shadow: 0 0 5px hsl(var(--neon-orange)), 0 0 10px hsl(var(--neon-orange)), 0 0 15px hsl(var(--neon-orange));
+  }
+
+  /* Glass morphism */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Holographic effect */
+  .holographic {
+    background: linear-gradient(45deg, rgba(0, 212, 255, 0.2), rgba(139, 92, 246, 0.2), rgba(255, 107, 53, 0.2));
+    background-size: 400% 400%;
+    animation: hologram 3s ease-in-out infinite;
+  }
+
+  @keyframes hologram {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Floating animation */
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Particle effects */
+  .particle {
+    position: absolute;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.8) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: particle-float 8s linear infinite;
+  }
+
+  @keyframes particle-float {
+    0% { 
+      transform: translateY(100vh) scale(0);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% { 
+      transform: translateY(-100px) scale(1);
+      opacity: 0;
+    }
+  }
+
+  /* 3D transform effects */
+  .transform-3d {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .rotate-y {
+    animation: rotateY 20s linear infinite;
+  }
+
+  @keyframes rotateY {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+  }
+
+  /* Neural network lines */
+  .neural-line {
+    background: linear-gradient(90deg, transparent, hsl(var(--neon-blue)), transparent);
+    height: 1px;
+    animation: neural-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes neural-pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  /* Text glow effects */
+  .text-glow {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, hsl(var(--neon-blue)), hsl(var(--neon-purple)));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, hsl(var(--neon-purple)), hsl(var(--neon-orange)));
+  }
+}
+
+@layer components {
+  .cyber-button {
+    @apply relative px-6 py-3 bg-transparent border border-cyan-400 text-cyan-400 font-semibold tracking-wider uppercase transition-all duration-300 hover:bg-cyan-400 hover:text-black hover:shadow-lg;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+  }
+
+  .cyber-button:hover {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+  }
+
+  .game-card {
+    @apply relative overflow-hidden rounded-xl transition-all duration-500 hover:scale-105;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(139, 92, 246, 0.1));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .game-card:hover {
+    border-color: hsl(var(--neon-blue));
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+  }
+
+  .ai-chip {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+    background: linear-gradient(45deg, rgba(139, 92, 246, 0.3), rgba(0, 212, 255, 0.3));
+    border: 1px solid rgba(139, 92, 246, 0.5);
+  }
+
+  .holographic-text {
+    background: linear-gradient(45deg, #00d4ff, #8b5cf6, #ff6b35);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: hologram 3s ease-in-out infinite;
   }
 }
